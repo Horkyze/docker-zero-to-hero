@@ -12,13 +12,13 @@ This is a simple Todo application built with Ruby on Rails and PostgreSQL, conta
 
 1. Start the application:
    ```
-   docker-compose up -d
+   docker compose up -d
    ```
    This command builds the images (if not already built) and starts the containers in detached mode.
 
 1. Run database migrations:
    ```
-   docker-compose exec web bundle exec rails db:migrate
+   docker compose exec web bundle exec rails db:migrate
    ```
    This creates the database and runs any pending migrations.
 
@@ -34,7 +34,7 @@ This is a simple Todo application built with Ruby on Rails and PostgreSQL, conta
 
 To stop the application and remove the containers:
 ```
-docker-compose down
+docker compose down
 ```
 
 ## Troubleshooting
@@ -43,17 +43,17 @@ If you encounter any issues:
 
 1. Check if the containers are running:
    ```
-   docker-compose ps
+   docker compose ps
    ```
 
 2. View the logs:
    ```
-   docker-compose logs
+   docker compose logs
    ```
 
-3. If you make changes to the Dockerfile or docker-compose.yml, rebuild the images:
+3. If you make changes to the Dockerfile or docker compose.yml, rebuild the images:
    ```
-   docker-compose up -d --build
+   docker compose up -d --build
    ```
 
 ## File Structure
@@ -66,7 +66,7 @@ If you encounter any issues:
 
 To run commands in the Rails container:
 ```
-docker-compose exec web bash
+docker compose exec web bash
 ```
 
 This opens a bash shell in the web container, where you can run Rails commands like:
@@ -76,5 +76,5 @@ This opens a bash shell in the web container, where you can run Rails commands l
 
 Remember to restart the application after making changes:
 ```
-docker-compose restart web
+docker compose restart web
 ```
